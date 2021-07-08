@@ -1,0 +1,25 @@
+
+html, body {
+    margin: 0;
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom,#b92b27, #1565C0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #b92b27, #1565C0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.cardContainer {
+    width: 500px;
+    height: 500px;
+}
+
+.card {
+    position: relative;
+    background-color: #fff;
+    width: 80vw;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: 50%;
+}
+}

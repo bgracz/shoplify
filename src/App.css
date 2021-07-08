@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+html {
+    margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#root {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  #root>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .app>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-}
+
+  .row {
+    flex-direction: row !important;
+  }
+  
+  .row>* {
+    margin: 0;
+  }
+
+  h1, .head {
+    font-family: 'Allura', cursive;
+    font-size: 5.2rem;
+    color: white;
+  }
+  
+  h1 {
+    font-family: 'Damion', cursive;
+    color: black;
+    text-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+  }
+  
+  h2 {
+    color: black;
+  }
+  
+  .swipe {
+    position: absolute;
+  }
+  
+  .cardContainer {
+    width: 90vw;
+    max-width: 260px;
+    height: 300px;
+    border-radius: 10px;
+  }
+  
+  .card {
+    position: relative;
+    background-color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    width: 80vw;
+    max-width: 260px;
+    height: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  }
+  
+  .cardContent {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swipe:last-of-type {
+  
+  }
+  
+  .card h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    color: black;
+    text-align: center;
+    font-size: 21px;
+    position: relative;
+    top: 35%;
+  }
+  
+  .infoText {
+    width: 100%;
+    height: 28px;
+    justify-content: center;
+    display: flex;
+    color: black;
+    animation-name: popup;
+    animation-duration: 800ms;
+  }
+  
+  @keyframes popup {
+    0%   { transform: scale(1,1) }
+    10%  { transform: scale(1.1,1.1) }
+    30%  { transform: scale(.9,.9) }
+    50%  { transform: scale(1,1) }
+    57%  { transform: scale(1,1) }
+    64%  { transform: scale(1,1) }
+    100% { transform: scale(1,1) }
+  }  

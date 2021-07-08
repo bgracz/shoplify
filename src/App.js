@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React from 'react';
+import ReactCardFlip from 'react-card-flip';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
+import Cards from './Cards';
+import Settings from './Settings';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// document.ontouchmove = function(e){ e.preventDefault(); }
+
+class App extends React.Component {
+  constructor() {
+    super();
+      this.state = {
+      isFlipped: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+  };
+
+  render() {
+    return (
+      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+        <div>
+        <h1 className="head">Shopify</h1>
+        <Cards />
+        <SettingsIcon color="action" style={{fontSize: '340%', color: 'white'}} onClick={this.handleClick} />
+        </div>
+
+        <div>
+        <Settings onSwipe/>
+          <ArrowBackIcon color="action" style={{fontSize: '350%', color: 'white'}} onClick={this.handleClick} />
+        </div>
+      </ReactCardFlip>
+    )
+  }
 }
 
 export default App;
